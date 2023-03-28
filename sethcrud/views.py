@@ -21,3 +21,13 @@ def index(request):
     data = Person.objects.all
     context = {"data": data}
     return render(request, "index.html", context)
+
+def deletedata(request, id):
+    d = Person.objects.get(id=id)
+    d.delete()
+    return redirect("/")
+    return render(request, "index.html")
+
+def updatedata(request, id):
+    d = Person.objects.get(id=id)
+    return render(request, 'edit.html', {'d':d})

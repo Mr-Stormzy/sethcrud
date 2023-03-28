@@ -22,5 +22,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('insert', views.insertdata, name='insertdata')
+    path('insert', views.insertdata, name='insertdata'),
+    path('delete/<id>', views.deletedata, name='deletedata'),
+    path('update/<id>', views.updatedata, name='updatedata')
 ]
